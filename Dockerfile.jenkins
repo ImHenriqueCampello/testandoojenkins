@@ -9,8 +9,11 @@ RUN apt-get update && \
     python3-venv \
     git \
     libpq-dev \
-    postgresql-client \
-    apt-get clean \
-    docker.io
+    postgresql-client && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN groupadd -f docker && \
+    usermod -aG docker jenkins
 
 USER jenkins
