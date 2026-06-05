@@ -6,8 +6,7 @@ pipeline {
         stage('Instalar Dependências') {
             steps {
                 dir('backend') {
-                    sh 'python3 -m pip install --upgrade pip'
-                    sh 'pip3 install -r requirements.txt'
+                    sh 'pip3 install --break-system-packages -r requirements.txt'
                 }
             }
         }
@@ -30,18 +29,9 @@ pipeline {
     }
 
     post {
-
         always {
             archiveArtifacts artifacts: 'backend/coverage.xml', allowEmptyArchive: true
             archiveArtifacts artifacts: 'backend/htmlcov/**', allowEmptyArchive: true
-        }
-
-        success {
-            echo 'Pipeline executado com sucesso!'
-        }
-
-        failure {
-            echo 'Pipeline falhou!'
         }
     }
 }
