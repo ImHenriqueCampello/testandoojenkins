@@ -9,7 +9,7 @@ RUN apt-get update && \
     python3-venv \
     git \
     libpq-dev \
-    postgresql-client && \
+    postgresql-client \
     apt-get clean \
     docker.io
 
