@@ -14,7 +14,7 @@ pipeline {
         stage('Executar Testes') {
             steps {
                 dir('backend') {
-                    sh 'pytest -v'
+                    sh 'python3 -m pytest -v'
                 }
             }
         }
@@ -22,7 +22,7 @@ pipeline {
         stage('Gerar Cobertura') {
             steps {
                 dir('backend') {
-                    sh 'pytest --cov=. --cov-report=html --cov-report=xml'
+                    sh 'python3 -m pytest --cov=. --cov-report=html --cov-report=xml'
                 }
             }
         }
