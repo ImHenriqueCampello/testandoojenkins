@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Task Manager UI</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <script>
+      window.API_BASE = 'http://localhost:5000';
+    </script>
+    <div class="container">
+      <h1>Task Manager</h1>
+
+      <section class="create">
+        <h2>Criar tarefa</h2>
+        <div class="field-row">
+          <label for="title">Título</label>
+          <input id="title" placeholder="Título" />
+        </div>
+        <div class="field-row">
+          <label for="description">Descrição</label>
+          <input id="description" placeholder="Descrição (opcional)" />
+        </div>
+        <button id="createBtn">Criar</button>
+      </section>
+
+      <section class="list">
+        <h2>Tarefas</h2>
+        <div class="boards">
+          <div class="board">
+            <h3>Aguardando</h3>
+            <ul id="tasks-pending"></ul>
+          </div>
+          <div class="board">
+            <h3>Em andamento</h3>
+            <ul id="tasks-in_progress"></ul>
+          </div>
+          <div class="board">
+            <h3>Concluídas</h3>
+            <ul id="tasks-done"></ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- editSection removed: using modal overlay instead -->
+
+      <section class="single">
+        <h2>Buscar por nome</h2>
+        <input id="fetchName" placeholder="Nome (ou parte do título)" />
+        <button id="fetchBtn">Buscar</button>
+        <div id="searchResults" class="search-results"></div>
+      </section>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
