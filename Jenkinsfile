@@ -13,7 +13,7 @@ pipeline {
             steps {
                 dir('backend') {
                     sh '''
-                    pip3 install --break-system-packages -r requirements.txt
+                    pip3 install --break-system-packages -r jenkins_requirements.txt
                     '''
                 }
             }
