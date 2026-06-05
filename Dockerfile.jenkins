@@ -7,7 +7,9 @@ RUN apt-get update && \
     python3 \
     python3-pip \
     python3-venv \
-    git && \
+    git \
+    libpq-dev \
+    postgresql-client && \
     apt-get clean
 
 USER jenkins
