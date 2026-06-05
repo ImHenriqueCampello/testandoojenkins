@@ -10,6 +10,7 @@ RUN apt-get update && \
     git \
     libpq-dev \
     postgresql-client && \
-    apt-get clean
+    apt-get clean \
+    docker.io
 
 USER jenkins
