@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     environment {
-        EMAIL_USER = "mandartrabalhoescola@gmail.com"
+        EMAIL_USER = credentials('email-user')
         EMAIL_PASSWORD = credentials('email-password')
-        EMAIL_DESTINO = "henrique.o.campello@gmail.com"
+        EMAIL_DESTINO = credentials('email-destino')
     }
 
     stages {
